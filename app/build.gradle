@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'jmi.wayf.whereareyoufrom'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "jmi.wayf.whereareyoufrom"
@@ -23,12 +23,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/home',
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
